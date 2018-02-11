@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://nikpetrovic.github.io/",
   "dependencies": {
+    "animate.css": "^3.6.1",
     "axios": "^0.17.1",
     "font-awesome": "^4.7.0",
     "gh-pages": "^1.1.0",
