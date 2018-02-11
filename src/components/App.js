@@ -12,6 +12,7 @@ class App extends Component {
     try {
       this.setState(state => ({
         ...state,
+        searchTriggered: true,
         isLoading: true,
         resultData: []
       }))
@@ -31,23 +32,26 @@ class App extends Component {
   }
 
   render() {
-    const { isLoading, resultData } = this.state
+    const { searchTriggered, isLoading, resultData } = this.state
     return (
-      <div className="app container-fluid animated fadeIn">
+      <div className="App container-fluid animated fadeIn">
         <div className="row">
-          <div className="col-12 app-header">
-            <img src={logo} className="app-logo animated fadeInDown" alt="logo" />
-            <h1 className="app-title animated fadeInLeft">Welcome to React</h1>
+          <div className="col-12 App-header">
+            <img
+              src={logo}
+              className="App-logo animated fadeInDown"
+              alt="logo"
+            />
+            <h1 className="App-title animated fadeInLeft">Welcome to React</h1>
           </div>
         </div>
-        <br />
-        <div className="row justify-content-center animated fadeInRight">
+        <div className="row justify-content-center App-search-controls-container animated fadeInRight">
           <div className="col-10 col-md-6 input-group">
             <input
               type="text"
               className="form-control"
-              placeholder="Recipient's username"
-              aria-label="Recipient's username"
+              placeholder="Enter Device Identifier..."
+              aria-label="Enter Device Identifier"
               aria-describedby="basic-addon2"
             />
             <div className="input-group-append">
@@ -55,12 +59,16 @@ class App extends Component {
                 className="btn btn-primary"
                 type="button"
                 onClick={this.onClick}>
-                Button
+                Search
               </button>
             </div>
           </div>
         </div>
-        <ResultTable isLoading={isLoading} data={resultData} />
+        <ResultTable
+          isLoading={isLoading}
+          data={resultData}
+          searchTriggered={searchTriggered}
+        />
       </div>
     )
   }
