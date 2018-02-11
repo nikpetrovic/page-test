@@ -2,9 +2,12 @@
   "name": "page-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nikpetrovic.github.io/page-test/",
+  "homepage": "https://nikpetrovic.github.io/",
   "dependencies": {
+    "axios": "^0.17.1",
+    "font-awesome": "^4.7.0",
     "gh-pages": "^1.1.0",
+    "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
@@ -16,5 +19,19 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier-standard": "^1.0.1",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-jsx": "^4.0.2",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

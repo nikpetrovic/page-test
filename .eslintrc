@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "prettier-standard",
+    "standard-jsx",
+    "prettier/react"
+  ],
+  "plugins": [
+    "class-property"
+  ],
+  "rules": {
+    "jsx-quotes": 0
+  }
+}
