@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './styles/ResultTable.css'
 
 class ResultTable extends Component {
   renderHeader = () => (
@@ -36,16 +37,22 @@ class ResultTable extends Component {
     </table>
   )
 
-  renderNoData = () => (
-    <div className="row">
-      <div className="col text-center">
-        <i>No data</i>
-      </div>
-    </div>
-  )
+  renderNoData = searchTriggered => {
+    return (
+      searchTriggered && (
+        <div className="row">
+          <div className="col text-center">
+            <i>No data</i>
+          </div>
+        </div>
+      )
+    )
+  }
 
-  renderComponent = data => {
-    return data && data.length > 0 ? this.renderData(data) : this.renderNoData()
+  renderComponent = (searchTriggered, data) => {
+    return data && data.length > 0
+      ? this.renderData(data)
+      : this.renderNoData(searchTriggered)
   }
 
   renderLoader = () => (
@@ -58,8 +65,14 @@ class ResultTable extends Component {
   )
 
   render() {
-    const { isLoading, data } = this.props
-    return isLoading ? this.renderLoader() : this.renderComponent(data)
+    const { searchTriggered, isLoading, data } = this.props
+    return (
+      <div className="row ResultTable-result-table-container">
+        {isLoading
+          ? this.renderLoader()
+          : this.renderComponent(searchTriggered, data)}
+      </div>
+    )
   }
 }
 
