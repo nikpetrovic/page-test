@@ -31,7 +31,7 @@ class ResultTable extends Component {
   )
 
   renderData = data => (
-    <table className="table">
+    <table className="table animated fadeIn">
       {this.renderHeader()}
       {this.renderBody(data)}
     </table>
@@ -58,7 +58,7 @@ class ResultTable extends Component {
   renderLoader = () => (
     <div className="row justify-content-center">
       <div className="col text center">
-        <i className="fa fa-cog fa-spin fa-3x fa-fw" />
+        <i className="fa fa-spinner fa-spin fa-3x fa-fw" />
         <span className="sr-only">Loading...</span>
       </div>
     </div>
@@ -67,7 +67,7 @@ class ResultTable extends Component {
   render() {
     const { searchTriggered, isLoading, data } = this.props
     return (
-      <div className="row ResultTable-result-table-container">
+      <div className="ResultTable-result-table-container">
         {isLoading
           ? this.renderLoader()
           : this.renderComponent(searchTriggered, data)}
