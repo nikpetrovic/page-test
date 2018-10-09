@@ -31,7 +31,7 @@ class ResultTable extends Component {
   )
 
   renderData = data => (
-    <table className="table">
+    <table className="table animated fadeIn">
       {this.renderHeader()}
       {this.renderBody(data)}
     </table>
@@ -67,7 +67,7 @@ class ResultTable extends Component {
   render() {
     const { searchTriggered, isLoading, data } = this.props
     return (
-      <div className="row ResultTable-result-table-container">
+      <div className="ResultTable-result-table-container">
         {isLoading
           ? this.renderLoader()
           : this.renderComponent(searchTriggered, data)}

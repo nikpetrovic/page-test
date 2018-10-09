@@ -34,14 +34,18 @@ class App extends Component {
   render() {
     const { searchTriggered, isLoading, resultData } = this.state
     return (
-      <div className="App container-fluid">
+      <div className="App container-fluid animated fadeIn">
         <div className="row">
           <div className="col-12 App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <img
+              src={logo}
+              className="App-logo animated fadeInDown"
+              alt="logo"
+            />
+            <h1 className="App-title animated fadeInLeft">Welcome to React</h1>
           </div>
         </div>
-        <div className="row justify-content-center App-search-controls-container">
+        <div className="row justify-content-center App-search-controls-container animated fadeInRight">
           <div className="col-10 col-md-6 input-group">
             <input
               type="text"
